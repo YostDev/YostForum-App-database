@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de visitas</title>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>       
+    <script src="aplicacion.js" defer></script>
+    <link rel="stylesheet" href="app online.css">
+    <script src="https://kit.fontawesome.com/cbcc2cb107.js" crossorigin="anonymous"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>  document.addEventListener("DOMContentLoaded", function() {
+    AOS.init({
+        offset: 150,
+    });
+});
+</script>    
+</head>
+<body>
+    <div class="decoracion"></div>
+    <div class="header" data-aos="zoom-in">
+        <img src="https://dl.dropbox.com/scl/fi/rwhopdwaljcl6fpzxmrfq/1715982935158.png?rlkey=cwec8xttrffbfjpwrt9ga5jji&" alt="logo YostDev" style="margin-left: 10px; filter: drop-shadow(0 0 5px #d5dfff35);" width="45px">
+        <div>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-github"></i>            
+        </div>
+    </div>
+    
+    <div onclick="mostrar()" class="anadirBoton">
+        <i class="fas fa-plus"></i>
+    </div>
+    
+    <div class="fondoGris">    
+    <form id="comment_form">
+        <input type="text" name="nombre" id="name" placeholder="Name Max(20 characters)" required>
+        <input type="text" name="mensaje" id="message" placeholder="I think that... Max(200 characters)" required>
+        <div class="botones"> 
+            <button onclick="esconder()" style="background: tomato;" type="button">
+                <i class="fas fa-trash"></i>
+            </button>
+            <button type="submit">
+                <i class="fas fa-paper-plane"></i>
+            </button>           
+        </div>
+    </form>
+    </div>
+    <h2 class="tituloInicial">
+        Hi, welcome
+    </h2>
+    <p class="textoInicial">
+       Publish your ideas, but not all...
+    </p>
+    <div class="infoComment">
+        <div class="infoC">
+            <h2>
+               Posts
+            </h2>        
+            <div class="order" onclick="ordenar()">
+               New
+            </div>
+        </div>
+        <p class="all">
+            All
+            <span id="cantidad">
+               00
+            </span>
+        </p>
+    </div>
+    
+    <div id="comments"></div>    
+    <div class="paginacion">
+        <button id="atras" class="especial"> 
+             <
+        </button>
+        <button id="contadorPaginas" class="especial"> 
+             1
+        </button>
+        <button id="adelante" class="especial"> 
+             >
+        </button>
+    </div>
+</body>
+</html>
